@@ -15,10 +15,19 @@ class Ciphertext extends Component {
             rowsMax="10"
             margin="normal"
             placeholder="Enter ciphertext"
+            onChange={this.props.inputHandler}
+            value={this.props.cipherText}
+            disabled={this.props.shiftCount===""?true:false}
           />
         </center>
       </div>);
     }
 }
+
+Ciphertext.propTypes = {
+  inputHandler: PropTypes.func,
+  shiftCount: PropTypes.string,
+  cipherText: PropTypes.string
+};
 
 export default Ciphertext;

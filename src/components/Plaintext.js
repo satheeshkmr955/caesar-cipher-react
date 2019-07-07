@@ -14,9 +14,19 @@ class Plaintext extends Component {
             rowsMax="10"
             margin="normal"
             placeholder="Enter plaintext"
+            onChange={this.props.inputHandler}
+            value={this.props.plainText}
+            disabled={this.props.shiftCount===""?true:false}
           />
         </center>
       </div>);
     }
 }
+
+Plaintext.propTypes = {
+  inputHandler: PropTypes.func,
+  shiftCount: PropTypes.string,
+  plainText: PropTypes.string
+};
+
 export default Plaintext;
